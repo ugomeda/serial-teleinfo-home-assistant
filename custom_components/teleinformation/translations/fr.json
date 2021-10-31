@@ -1,0 +1,36 @@
+{
+    "config": {
+        "title": "Télé-information",
+        "error": {
+            "serial_error": "Impossible de se connecter au port, vérifiez le chemin et la connexion.",
+            "decode_error": "Connection réussie au port série, mais impossible de décoder les trames. Vérifiez que vous tentez de vous connecter à un service Téléinformation.",
+            "unknown_error": "Erreur inconnue, veuillez regarder les journaux de Home Assistant.",
+            "http_failure_error": "Impossible de se connecter au serveur. Vérifiez que l'adresse du serveur est correcte.",
+            "http_unauthorized_error": "Identifiants refusés. Vérifiez que le mot de passe est bien présent dans l'adresse fournée et est valide.",
+            "http_decode_error": "Impossible de décoder les informations fournies par le serveur. Vérifiez que l'adresse pointe bien vers un serveur serial-teleinfo."
+        },
+        "step": {
+            "user": {
+                "title": "Ajouter un compteur télé-information",
+                "description": "Vous pouvez ajouter un compteur connecté directement à Home Assistant (mode local), ou vous connecter à un serveur serial-teleinfo distant (mode http).",
+                "data": {
+                    "name": "Choisissez le nom de votre compteur",
+                    "connection_type": "Type de connexion"
+                }
+            },
+            "mode_local": {
+                "title": "Ajouter un compteur télé-information (local)",
+                "data": {
+                    "serial_port": "Chemin vers le port série"
+                }
+            },
+            "mode_http": {
+                "title": "Ajouter un compteur télé-information (http)",
+                "description": "L'adresse du serveur doit contenir les identifiants de connexion au serveur (exemple: http://user:password@localhost:1234/).",
+                "data": {
+                    "url": "Adresse du serveur serial-teleinfo"
+                }
+            }
+        }
+    }
+}

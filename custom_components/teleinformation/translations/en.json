@@ -1,0 +1,36 @@
+{
+    "config": {
+        "title": "Télé-information",
+        "error": {
+            "serial_error": "Could not connect to the serial port, please check the path and connection.",
+            "decode_error": "Connection to serial port successful, but unable to decode frames. Please check you are connecting to a teleinformation device.",
+            "unknown_error": "Unknown error, please check Home Assistant logs.",
+            "http_failure_error": "Unable to connect to the server. Check the URL is valide.",
+            "http_unauthorized_error": "Authentication denied. Check the username and password are set in the URL and are valid.",
+            "http_decode_error": "Unable to interpret the data provided by the server. Check that the URL point to a serial-teleinfo server."
+        },
+        "step": {
+            "user": {
+                "title": "Add a télé-information meter",
+                "description": "You can add a meter connected to Home Assistant (local mode), or connect to a distant serial-teleinfo server (http mode).",
+                "data": {
+                    "name": "Name of the meter",
+                    "connection_type": "Connection type"
+                }
+            },
+            "mode_local": {
+                "title": "Add a télé-information meter (local)",
+                "data": {
+                    "serial_port": "Path to the serial port"
+                }
+            },
+            "mode_http": {
+                "title": "Add a télé-information meter (http)",
+                "description": "The URL must contain the username and password configured for the server (example: http://user:password@localhost:1234/).",
+                "data": {
+                    "url": "URL of the serial-teleinfo server"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "domain": "teleinformation",
+  "name": "Télé-information",
+  "config_flow": true,
+  "documentation": "https://www.home-assistant.io/components/teleinformation",
+  "dependencies": [],
+  "codeowners": ["@ugomeda"],
+  "requirements": ["serial-teleinfo>=1.0.1", "aiohttp"]
+}
