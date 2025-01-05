@@ -3,11 +3,12 @@ from homeassistant.components.sensor import (
     PLATFORM_SCHEMA, 
     SensorEntityDescription,
     SensorEntity,
+    SensorStateClass,
+    SensorDeviceClass,
 )
 from homeassistant.components.binary_sensor import (
     BinarySensorEntity,
     BinarySensorEntityDescription,
-    DEVICE_CLASS_CONNECTIVITY,
 )
 from homeassistant.config_entries import SOURCE_IMPORT
 import homeassistant.helpers.config_validation as cv
@@ -98,7 +99,7 @@ class LinkyEntity(BaseTeleInfoEntity, BinarySensorEntity):
         self.entity_description = BinarySensorEntityDescription(
             key=key,
             name=f"{self.basename} Meter",
-            device_class=DEVICE_CLASS_CONNECTIVITY
+            device_class=SensorDeviceClass
         )
 
     @property

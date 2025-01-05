@@ -1,16 +1,14 @@
 from homeassistant.components.sensor import (
-    STATE_CLASS_MEASUREMENT,
-    STATE_CLASS_TOTAL_INCREASING
-)
-from homeassistant.const import (
-    DEVICE_CLASS_ENERGY,
-    DEVICE_CLASS_POWER,
-    DEVICE_CLASS_CURRENT,
-    ENERGY_WATT_HOUR,
-    POWER_VOLT_AMPERE,
-    ELECTRIC_CURRENT_AMPERE,
+    SensorStateClass,
+    SensorDeviceClass,
 )
 
+from homeassistant.const import (
+    UnitOfPower,
+    UnitOfApparentPower,
+    UnitOfEnergy,
+    UnitOfElectricCurrent,
+)
 
 DOMAIN = "teleinformation"
 
@@ -42,19 +40,19 @@ DATA_COORDINATOR = "coordinator"
 TYPE_ADDRESS = "ADCO"
 
 SENSOR_INDEX_ENERGY = {
-    "state_class": STATE_CLASS_TOTAL_INCREASING,
-    "native_unit_of_measurement": ENERGY_WATT_HOUR,
-    "device_class": DEVICE_CLASS_ENERGY,
+    "state_class": SensorStateClass.TOTAL_INCREASING,
+    "native_unit_of_measurement": UnitOfEnergy.WATT_HOUR,
+    "device_class": SensorDeviceClass.ENERGY,
 }
 SENSOR_APPARENT_POWER = {
-    "state_class": STATE_CLASS_MEASUREMENT,
-    "native_unit_of_measurement": POWER_VOLT_AMPERE,
-    "device_class": DEVICE_CLASS_POWER,
+    "state_class": SensorStateClass.MEASUREMENT,
+    "native_unit_of_measurement": UnitOfApparentPower.VOLT_AMPERE,
+    "device_class": SensorDeviceClass.APPARENT_POWER,
 }
 SENSOR_CURRENT = {
-    "state_class": STATE_CLASS_MEASUREMENT,
-    "native_unit_of_measurement": ELECTRIC_CURRENT_AMPERE,
-    "device_class": DEVICE_CLASS_CURRENT,
+    "state_class":SensorStateClass.MEASUREMENT,
+    "native_unit_of_measurement": UnitOfElectricCurrent.AMPERE,
+    "device_class": SensorDeviceClass.CURRENT,
 }
 SENSOR_DEFAULT = {}
 
